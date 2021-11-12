@@ -59,6 +59,6 @@ yarn add vue-tsc -D
 yarn add husky -D
 # 初始化 husky
 npx husky install
-# 测试
+# 测试命令
 npx husky add .husky/pre-commit "echo test"
 ```

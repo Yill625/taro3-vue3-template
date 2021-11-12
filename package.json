@@ -2,7 +2,7 @@
   "name": "taro3-vue3-template",
   "version": "1.0.0",
   "private": true,
-  "description": "WechatAppDemo",
+  "description": "taro3-vue3-template",
   "templateInfo": {
     "name": "default",
     "typescript": true,

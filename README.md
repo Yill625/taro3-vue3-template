@@ -1,6 +1,6 @@
 # Taro3 + Vue3 + TypeScript + NutUi + Vuex4
 
-## Taro 基本安装
+## 一、Taro 基本安装
 
 https://taro-docs.jd.com/taro/docs/GETTING-STARTED
 
@@ -24,17 +24,17 @@ yarn dev:weapp
 
 ![](https://tva1.sinaimg.cn/large/008i3skNgy1gwcdvk32z9j31hc0u00vc.jpg)
 
-## 设置代码规范的 Eslint Prettier CommitLint StyleLint
+## 二、设置代码规范的 Eslint Prettier CommitLint StyleLint
 
-1. 安装依赖
+### 安装依赖
 
 ```shell
 yarn add @vue/eslint-config-prettier @vue/eslint-config-typescript eslint-plugin-prettier -D
 ```
 
-2. 解决 Eslint 和 Prettier 的冲突
-   > 设置.eslintrc.js 和 .prettierrc
-3. Ts 检查 确保符合 Ts 规范 Eslint 检查 确保符合 Eslint 规范
+### 解决 Eslint 和 Prettier 的冲突需设置.eslintrc.js 和 .prettierrc
+
+### Ts 检查 确保符合 Ts 规范 Eslint 检查 确保符合 Eslint 规范
 
 ```shell
 yarn add vue-tsc -D

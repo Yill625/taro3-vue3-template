@@ -45,7 +45,7 @@ yarn add vue-tsc -D
 ```json
 "scripts":{
   "tsc": "vue-tsc --noEmit --skipLibCheck",
-	"lint": "eslint --ext .vue --ext .js --ext .ts src/"
+  "lint": "eslint --ext .vue --ext .js --ext .ts src/"
 }
 ```
 

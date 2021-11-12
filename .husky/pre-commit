@@ -1,4 +1,11 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-echo test
+# lint1
+echo "---格式化检查开始---"
+yarn lint
+echo "---格式化检查结束---"
+# 检查ts
+echo "---ts检查开始---"
+yarn tsc
+echo "---ts检查结束---"

@@ -34,3 +34,19 @@ yarn add @vue/eslint-config-prettier @vue/eslint-config-typescript eslint-plugin
 
 2. 解决 Eslint 和 Prettier 的冲突
    > 设置.eslintrc.js 和 .prettierrc
+3. Ts 检查 确保符合 Ts 规范 Eslint 检查 确保符合 Eslint 规范
+
+```shell
+yarn add vue-tsc -D
+```
+
+在 package.json 中 script 添加命令
+
+```json
+"scripts":{
+  "tsc": "vue-tsc --noEmit --skipLibCheck",
+	"lint": "eslint --ext .vue --ext .js --ext .ts src/"
+}
+```
+
+![](https://tva1.sinaimg.cn/large/008i3skNgy1gwcf8vv04xj31uw0lidiz.jpg)

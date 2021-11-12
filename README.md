@@ -23,3 +23,14 @@ yarn dev:weapp
 ![](https://tva1.sinaimg.cn/large/008i3skNgy1gwcdty8l85j312f0u075v.jpg)
 
 ![](https://tva1.sinaimg.cn/large/008i3skNgy1gwcdvk32z9j31hc0u00vc.jpg)
+
+## 设置代码规范的 Eslint Prettier CommitLint StyleLint
+
+1. 安装依赖
+
+```shell
+yarn add @vue/eslint-config-prettier @vue/eslint-config-typescript eslint-plugin-prettier -D
+```
+
+2. 解决 Eslint 和 Prettier 的冲突
+   > 设置.eslintrc.js 和 .prettierrc

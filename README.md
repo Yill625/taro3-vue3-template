@@ -66,3 +66,5 @@ npx husky add .husky/pre-commit "echo test"
 ![](https://tva1.sinaimg.cn/large/008i3skNly1gwcg81i3ipj310s072gmq.jpg)
 
 编辑 pre-commit 执行 Eslint 检查和 Ts 检查
+
+![](https://tva1.sinaimg.cn/large/008i3skNly1gwcgapvfw1j30w00faq4x.jpg)

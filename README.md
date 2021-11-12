@@ -26,15 +26,15 @@ yarn dev:weapp
 
 ## 二、设置代码规范的 Eslint Prettier CommitLint StyleLint
 
-### 安装依赖
+### 1.安装依赖
 
 ```shell
 yarn add @vue/eslint-config-prettier @vue/eslint-config-typescript eslint-plugin-prettier -D
 ```
 
-### 解决 Eslint 和 Prettier 的冲突需设置.eslintrc.js 和 .prettierrc
+### 2.解决 Eslint 和 Prettier 的冲突需设置.eslintrc.js 和 .prettierrc
 
-### Ts 检查 确保符合 Ts 规范 Eslint 检查 确保符合 Eslint 规范
+### 3.Ts 检查 确保符合 Ts 规范 Eslint 检查 确保符合 Eslint 规范
 
 ```shell
 yarn add vue-tsc -D
@@ -50,3 +50,15 @@ yarn add vue-tsc -D
 ```
 
 ![](https://tva1.sinaimg.cn/large/008i3skNgy1gwcf8vv04xj31uw0lidiz.jpg)
+
+### 4.添加 husky 触发 Git 钩子来保证代码提交时 Ts 检查和 Eslint 检查都符合规范
+
+```shell
+# https://github.com/typicode/husky
+# https://typicode.github.io/husky/#/?id=articles
+yarn add husky -D
+# 初始化 husky
+npx husky install
+# 测试
+npx husky add .husky/pre-commit "echo test"
+```

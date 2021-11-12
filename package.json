@@ -28,7 +28,7 @@
     "dev:jd": "npm run build:jd -- --watch",
     "dev:quickapp": "npm run build:quickapp -- --watch",
     "tsc": "vue-tsc --noEmit --skipLibCheck",
-		"lint": "eslint --ext .vue --ext .js --ext .ts src/"
+    "lint": "eslint --ext .vue --ext .js --ext .ts src/"
   },
   "browserslist": [
     "last 3 versions",
@@ -59,6 +59,7 @@
     "eslint-config-taro": "3.3.12",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.0.0",
+    "husky": "^7.0.4",
     "stylelint": "9.3.0",
     "typescript": "^4.1.0",
     "vue-loader": "^16.0.0-beta.8",

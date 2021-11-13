@@ -68,3 +68,13 @@ npx husky add .husky/pre-commit "echo test"
 编辑 pre-commit 执行 Eslint 检查和 Ts 检查
 
 ![](https://tva1.sinaimg.cn/large/008i3skNly1gwcgapvfw1j30w00faq4x.jpg)
+
+### 5. 配置 [commitlint](https://github.com/conventional-changelog/commitlint) 提高提交时的规范
+
+```shell
+yarn add  @commitlint/{config-conventional,cli} -D
+# Configure commitlint to use conventional config
+echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js
+# Add hook
+npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
+```

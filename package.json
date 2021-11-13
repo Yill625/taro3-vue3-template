@@ -46,6 +46,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.8.0",
+    "@commitlint/cli": "^14.1.0",
+    "@commitlint/config-conventional": "^14.1.0",
     "@tarojs/mini-runner": "3.3.12",
     "@tarojs/webpack-runner": "3.3.12",
     "@types/webpack-env": "^1.13.6",

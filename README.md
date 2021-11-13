@@ -77,5 +77,5 @@ yarn add  @commitlint/{config-conventional,cli} -D
 echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js
 # Add hook
 npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
-
+# 首次安装不起作用可以运行 npx husky install
 ```

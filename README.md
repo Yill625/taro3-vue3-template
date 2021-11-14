@@ -79,3 +79,52 @@ echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitl
 npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
 # 首次安装不起作用可以运行 npx husky install
 ```
+
+## 组件库选择
+
+> [Nutui](https://nutui.jd.com/#/) 京东风格的轻量级移动端 Vue 组件库
+
+```shell
+yarn add @nutui/nutui-taro
+```
+
+安装 nutui 会遇到样式的报错 如图
+![](https://tva1.sinaimg.cn/large/008i3skNgy1gweug2xibjj32ay0oie81.jpg)
+
+解决办法：引入 @tarojs/plugin-html 插件 https://taro-docs.jd.com/taro/docs/use-h5
+
+全局引入后的依赖大小
+![](https://tva1.sinaimg.cn/large/008i3skNgy1gweum0nz0xj30r00ayq3a.jpg)
+
+为了按需引入，先安装插件 babel-plugin-import
+
+```shell
+# https://nutui.jd.com/#/starttaro
+yarn add babel-plugin-import -D
+```
+
+按需引入后的主包大小
+
+```js
+import { createApp } from 'vue'
+import App from './App.vue'
+import { Button, Cell, Icon } from '@nutui/nutui-taro'
+import '@nutui/nutui-taro/dist/style.css'
+createApp(App)
+  .use(Button)
+  .use(Cell)
+  .use(Icon)
+```
+
+![](https://tva1.sinaimg.cn/large/008i3skNgy1gweuu0eovyj31fu0ic403.jpg)
+
+样式处理 因为 nutui 的设计稿是 375 的 所以将框架的设计尺寸调整为 375
+![](https://tva1.sinaimg.cn/large/008i3skNgy1gwevt1ay7kj317s0ksgnv.jpg)
+
+到这里 nutui 组件库已经采坑完毕 能够正常使用 事件调用正常
+
+> nutui 事件不触发 是因为 @tarojs/plugin-html 版本不对 我当前这个项目固定设置为 3.3.12 如果设置为最新 3.3.13 则不行
+
+## 小程序分包配置
+
+> 随着业务代码和组件的引入越来越多，主包的大小一定会越来越大，超过 2m 的主包以后微信开发工具就无法使用预览的功能，为了提前做好准备在一开始就进行分包处理，主包只包含组件和公共代码，分包里放入业务代码

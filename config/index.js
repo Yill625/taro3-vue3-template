@@ -1,31 +1,31 @@
+const path = require('path')
 const config = {
   projectName: 'WechatAppDemo',
   date: '2021-11-12',
-  designWidth: 750,
+  designWidth: 375,
   deviceRatio: {
     640: 2.34 / 2,
     750: 1,
-    828: 1.81 / 2
+    828: 1.81 / 2,
+    375: 2 / 1
+  },
+  alias: {
+    '@': path.resolve(__dirname, '..', 'src')
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
-  plugins: [],
-  defineConstants: {
-  },
+  plugins: ['@tarojs/plugin-html'],
+  defineConstants: {},
   copy: {
-    patterns: [
-    ],
-    options: {
-    }
+    patterns: [],
+    options: {}
   },
   framework: 'vue3',
   mini: {
     postcss: {
       pxtransform: {
         enable: true,
-        config: {
-
-        }
+        config: {}
       },
       url: {
         enable: true,
@@ -48,8 +48,7 @@ const config = {
     postcss: {
       autoprefixer: {
         enable: true,
-        config: {
-        }
+        config: {}
       },
       cssModules: {
         enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
@@ -62,7 +61,7 @@ const config = {
   }
 }
 
-module.exports = function (merge) {
+module.exports = function(merge) {
   if (process.env.NODE_ENV === 'development') {
     return merge({}, config, require('./dev'))
   }

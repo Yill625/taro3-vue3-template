@@ -1090,7 +1090,7 @@
     core-js-pure "^3.19.0"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.11.2", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.6", "@babel/runtime@^7.7.7", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.11.2", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.6", "@babel/runtime@^7.7.7", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
   version "7.16.3"
   resolved "https://npm.bu6.io:443/@babel%2fruntime/-/runtime-7.16.3.tgz#b86f0db02a04187a3c17caa77de69840165d42d5"
   integrity sha1-uG8NsCoEGHo8F8qnfeaYQBZdQtU=
@@ -1428,6 +1428,14 @@
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
+"@nutui/nutui-taro@^3.1.10":
+  version "3.1.10"
+  resolved "https://registry.npmmirror.com/@nutui/nutui-taro/download/@nutui/nutui-taro-3.1.10.tgz#b9c45011d7317d9b933c660581ba7dd72c67f7d9"
+  integrity sha1-ucRQEdcxfZuTPGYFgbp91yxn99k=
+  dependencies:
+    sass "^1.34.0"
+    vue-router "^4.0.11"
+
 "@pmmmwh/react-refresh-webpack-plugin@0.4.3":
   version "0.4.3"
   resolved "https://npm.bu6.io:443/@pmmmwh%2freact-refresh-webpack-plugin/-/react-refresh-webpack-plugin-0.4.3.tgz#1eec460596d200c0236bf195b078a5d1df89b766"
@@ -1672,6 +1680,13 @@
     webpack-chain "4.9.0"
     webpack-format-messages "^2.0.5"
     yauzl "2.10.0"
+
+"@tarojs/plugin-html@3.3.12":
+  version "3.3.12"
+  resolved "https://registry.npmmirror.com/@tarojs/plugin-html/download/@tarojs/plugin-html-3.3.12.tgz#6b12b30fe260d9c55f488998e86799a4b316dd83"
+  integrity sha1-axKzD+Jg2cVfSImY6GeZpLMW3YM=
+  dependencies:
+    "@tarojs/shared" "3.3.12"
 
 "@tarojs/plugin-platform-alipay@3.3.12":
   version "3.3.12"
@@ -2320,6 +2335,11 @@
   dependencies:
     "@vue/compiler-dom" "3.2.21"
     "@vue/shared" "3.2.21"
+
+"@vue/devtools-api@^6.0.0-beta.18":
+  version "6.0.0-beta.20.1"
+  resolved "https://registry.npmmirror.com/@vue/devtools-api/download/@vue/devtools-api-6.0.0-beta.20.1.tgz#5b499647e929c35baf2a66a399578f9aa4601142"
+  integrity sha512-R2rfiRY+kZugzWh9ZyITaovx+jpU4vgivAEAiz80kvh3yviiTU3CBuGuyWpSwGz9/C7TkSWVM/FtQRGlZ16n8Q==
 
 "@vue/eslint-config-prettier@^6.0.0":
   version "6.0.0"
@@ -3216,6 +3236,14 @@ babel-plugin-global-define@^1.0.3:
   version "1.0.3"
   resolved "https://npm.bu6.io:443/babel-plugin-global-define/-/babel-plugin-global-define-1.0.3.tgz#262c528f0c26bf318f4ccc77cf21df43a0fa6308"
   integrity sha1-JixSjwwmvzGPTMx3zyHfQ6D6Ywg=
+
+babel-plugin-import@^1.13.3:
+  version "1.13.3"
+  resolved "https://registry.nlark.com/babel-plugin-import/download/babel-plugin-import-1.13.3.tgz#9dbbba7d1ac72bd412917a830d445e00941d26d7"
+  integrity sha1-nbu6fRrHK9QSkXqDDUReAJQdJtc=
+  dependencies:
+    "@babel/helper-module-imports" "^7.0.0"
+    "@babel/runtime" "^7.0.0"
 
 babel-plugin-jsx-attributes-array-to-object@^0.3.0:
   version "0.3.0"
@@ -12595,7 +12623,7 @@ sass@1.32.11:
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
 
-sass@^1.23.7:
+sass@^1.23.7, sass@^1.34.0:
   version "1.43.4"
   resolved "https://npm.bu6.io:443/sass/-/sass-1.43.4.tgz#68c7d6a1b004bef49af0d9caf750e9b252105d1f"
   integrity sha1-aMfWobAEvvSa8NnK91DpslIQXR8=
@@ -14809,6 +14837,13 @@ vue-loader@^16.0.0-beta.8:
     chalk "^4.1.0"
     hash-sum "^2.0.0"
     loader-utils "^2.0.0"
+
+vue-router@^4.0.11:
+  version "4.0.12"
+  resolved "https://registry.npmmirror.com/vue-router/download/vue-router-4.0.12.tgz#8dc792cddf5bb1abcc3908f9064136de7e13c460"
+  integrity sha1-jceSzd9bsavMOQj5BkE23n4TxGA=
+  dependencies:
+    "@vue/devtools-api" "^6.0.0-beta.18"
 
 vue-template-compiler@^2.6.10:
   version "2.6.14"

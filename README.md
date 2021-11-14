@@ -80,7 +80,7 @@ npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
 # 首次安装不起作用可以运行 npx husky install
 ```
 
-## 组件库选择
+## 在 Taro3 Vue3 小程序中使用 nutui
 
 > [Nutui](https://nutui.jd.com/#/) 京东风格的轻量级移动端 Vue 组件库
 

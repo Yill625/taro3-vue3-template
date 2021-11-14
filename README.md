@@ -123,7 +123,7 @@ createApp(App)
 
 到这里 nutui 组件库已经采坑完毕 能够正常使用 事件调用正常
 
-![](./docs/2021-11-14 19.05.09.gif)
+![](https://github.com/Yill625/taro3-vue3-template/blob/main/docs/2021-11-14%2019.05.09.gif)
 
 > nutui 事件不触发 是因为 @tarojs/plugin-html 版本不对 我当前这个项目固定设置为 3.3.12 如果设置为最新 3.3.13 则不行
 

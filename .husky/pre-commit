@@ -3,9 +3,9 @@
 
 # lint1
 echo "---格式化检查开始---"
-yarn lint
+npm run lint
 echo "---格式化检查结束---"
 # 检查ts
 echo "---ts检查开始---"
-yarn tsc
+npm run tsc
 echo "---ts检查结束---"

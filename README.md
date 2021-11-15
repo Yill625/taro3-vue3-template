@@ -152,3 +152,27 @@ export default {
 ```
 
 ![](https://tva1.sinaimg.cn/large/008i3skNgy1gwfoohwyzoj30sc0943yv.jpg)
+
+## 使用 script setup 语法在 Taro3 实现小程序[页面生命周期方法](https://taro-docs.jd.com/taro/docs/vue-page)
+
+使用 hooks 来封装
+
+```ts
+import { getCurrentInstance } from '@tarojs/taro'
+import { onMounted } from 'vue'
+
+const Current = getCurrentInstance()
+
+export function useDidShow(callback) {
+  onMounted(callback)
+  Current?.page?.onShow && (Current.page.onShow = callback)
+}
+export function usePullDownRefresh(callback) {
+  Current?.page?.onPullDownRefresh && (Current.page.onPullDownRefresh = callback)
+}
+export function useReachBottom(callback) {
+  Current?.page?.onReachBottom && (Current.page.onReachBottom = callback)
+}
+```
+
+![](https://github.com/Yill625/taro3-vue3-template/blob/main/docs/2021-11-15%2014.15.39.gif)

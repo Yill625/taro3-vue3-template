@@ -1,3 +1,5 @@
 export default {
-  navigationBarTitleText: 'featureA'
+  navigationBarTitleText: 'featureA',
+  enablePullDownRefresh: true,
+  backgroundTextStyle: 'dark'
 }

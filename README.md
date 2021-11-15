@@ -24,7 +24,7 @@ yarn dev:weapp
 
 ![](https://tva1.sinaimg.cn/large/008i3skNgy1gwcdvk32z9j31hc0u00vc.jpg)
 
-## 二、设置代码规范的 Eslint Prettier CommitLint StyleLint
+## 二、设置代码规范的 Eslint Prettier CommitLint
 
 ### 1.安装依赖
 

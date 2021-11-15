@@ -129,4 +129,26 @@ createApp(App)
 
 ## 小程序分包配置
 
-<!-- > 随着业务代码和组件的引入越来越多，主包的大小一定会越来越大，超过 2m 的主包以后微信开发工具就无法使用预览的功能，为了提前做好准备在一开始就进行分包处理，主包只包含组件和公共代码，分包里放入业务代码 -->
+> 随着业务代码和组件的引入越来越多，主包的大小一定会越来越大，超过 2m 的主包以后微信开发工具就无法使用预览的功能，为了提前做好准备在一开始就进行分包处理，主包只包含组件和公共代码，分包里放入业务代码
+
+```js
+//app.config.ts
+export default {
+  pages: ['pages/index/index'],
+  window: {
+    backgroundColor: '#fff',
+    backgroundTextStyle: 'light',
+    navigationBarBackgroundColor: '#fff',
+    navigationBarTitleText: 'WeChat',
+    navigationBarTextStyle: 'black'
+  },
+  subpackages: [
+    {
+      root: 'pages/featureA',
+      pages: ['index/index']
+    }
+  ]
+}
+```
+
+![](https://tva1.sinaimg.cn/large/008i3skNgy1gwfoohwyzoj30sc0943yv.jpg)

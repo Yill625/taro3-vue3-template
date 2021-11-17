@@ -1,8 +1,12 @@
 <template>
-  <div>12312321123</div>
+  <NumberDisplay />
+  <NumberSubmit />
 </template>
 <script lang="ts" setup>
 import { useDidShow, usePullDownRefresh } from '@/hooks/life'
+import NumberDisplay from '@/components/NumberDisplay.vue'
+import NumberSubmit from '@/components/NumberSubmit.vue'
+
 import Taro from '@tarojs/taro'
 useDidShow(() => {
   console.log('onShow')

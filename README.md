@@ -176,3 +176,57 @@ export function useReachBottom(callback) {
 ```
 
 ![](https://github.com/Yill625/taro3-vue3-template/blob/main/docs/2021-11-15%2014.15.39.gif)
+
+## Vuex 安装使用
+
+```js
+yarn add vuex@next --save
+```
+
+创建 store 目录 添加 index.ts 文件
+
+> 实现 vuex Ts 的提示 并进行模块化处理
+
+```ts
+import { createStore, Store } from 'vuex'
+import { InjectionKey } from 'vue'
+
+// 定义模块类型
+interface User {
+  number: number[]
+}
+export interface State {
+  user: User
+}
+// define injection key
+export const key: InjectionKey<Store<State>> = Symbol()
+
+const user = {
+  state: {
+    number: [1, 2, 3]
+  },
+  mutations: {
+    ADD_NUMBER(state: User, payload) {
+      state.number.push(payload)
+    }
+  },
+  actions: {
+    addNumber(context, number) {
+      context.commit('ADD_NUMBER', number)
+    }
+  },
+  getters: {
+    getNumbers(state) {
+      return state.numbers
+    }
+  }
+}
+
+const store = createStore({
+  modules: {
+    user
+  }
+})
+
+export default store
+```

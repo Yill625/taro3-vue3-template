@@ -14,7 +14,7 @@ const config = {
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
-  plugins: ['@tarojs/plugin-html'],
+  plugins: ['@tarojs/plugin-html', '@tarojs/plugin-vue-devtools'],
   defineConstants: {},
   copy: {
     patterns: [],

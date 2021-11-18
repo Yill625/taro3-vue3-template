@@ -1,5 +1,11 @@
 # Taro3 + Vue3 + TypeScript + NutUi + Vuex4
 
+## Vscode 插件安装
+
+- Eslint
+- Prettier
+- Volar
+
 ## 一、Taro 基本安装
 
 https://taro-docs.jd.com/taro/docs/GETTING-STARTED
@@ -230,3 +236,13 @@ const store = createStore({
 
 export default store
 ```
+
+## 细节调整
+
+### 小程序配置细节
+
+需要注意开发者工具的项目设置：
+
+- 需要设置关闭 ES6 转 ES5 功能，开启可能报错
+- 需要设置关闭上传代码时样式自动补全，开启可能报错
+- 需要设置关闭代码压缩上传，开启可能报错

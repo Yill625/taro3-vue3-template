@@ -52,6 +52,7 @@
     "@commitlint/cli": "^14.1.0",
     "@commitlint/config-conventional": "^14.1.0",
     "@tarojs/mini-runner": "3.3.12",
+    "@tarojs/plugin-vue-devtools": "^3.3.14",
     "@tarojs/webpack-runner": "3.3.12",
     "@types/webpack-env": "^1.13.6",
     "@typescript-eslint/eslint-plugin": "^4.15.1",

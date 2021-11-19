@@ -237,6 +237,10 @@ const store = createStore({
 export default store
 ```
 
+## taro3 配合 Vue DevTools 调试
+
+![](https://tva1.sinaimg.cn/large/008i3skNly1gwk89d5u70j31gi0u0jvs.jpg)
+
 ## 细节调整
 
 ### 小程序配置细节

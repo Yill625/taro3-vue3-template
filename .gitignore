@@ -5,3 +5,4 @@ deploy_versions/
 node_modules/
 .DS_Store
 .gitlab-ci.yml
+yarn-error.log

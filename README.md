@@ -241,6 +241,23 @@ export default store
 
 ![](https://tva1.sinaimg.cn/large/008i3skNly1gwk89d5u70j31gi0u0jvs.jpg)
 
+## 样式封装
+
+### 公共样式
+
+```scss
+page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial, Roboto,
+    'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+}
+
+// 解决iPhone x 以后的机型 底部安全区域的问题 https://jelly.jd.com/article/6006b1055b6c6a01506c87fd
+.safe-area-bottom {
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+```
+
 ## 细节调整
 
 ### 小程序配置细节

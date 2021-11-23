@@ -241,6 +241,10 @@ export default store
 
 ![](https://tva1.sinaimg.cn/large/008i3skNly1gwk89d5u70j31gi0u0jvs.jpg)
 
+> 开启 Vue DevTools 之后 预览主包体积会大于 2M 导致无法预览 视情况开启调试 正式构建不会开启 Vue DevTools 调试
+
+![](https://tva1.sinaimg.cn/large/008i3skNgy1gwp59kvqatj31d403wjs6.jpg)
+
 ## 样式封装
 
 ### 公共样式

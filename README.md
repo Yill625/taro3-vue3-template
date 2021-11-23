@@ -6,6 +6,15 @@
 - Prettier
 - Volar
 
+## 当前实现了的功能
+
+- Taro3 Vue3 Ts Vux4
+- 组件库 NutUI
+- Eslint Prettier CommitLint
+- 小程序分包配置
+- Taro3 配合 Vue DevTools 调试
+- 样式封装
+
 ## 一、Taro 基本安装
 
 https://taro-docs.jd.com/taro/docs/GETTING-STARTED

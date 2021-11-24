@@ -1,4 +1,4 @@
-# Taro3 + Vue3 + TypeScript + NutUi + Vuex4
+# 使用 Taro3 + Vue3 + TypeScript + NutUi + Vuex4 开发微信小程序
 
 ## Vscode 插件安装
 
@@ -15,9 +15,11 @@
 - Taro3 配合 Vue DevTools 调试
 - 样式封装
 
+# 本项目的搭建过程
+
 ## 一、Taro 基本安装
 
-https://taro-docs.jd.com/taro/docs/GETTING-STARTED
+[Taro 文档](https://taro-docs.jd.com/taro/docs/GETTING-STARTED)
 
 ```shell
 npx @tarojs/cli init WechatAppDemo
@@ -30,16 +32,23 @@ npx @tarojs/cli init WechatAppDemo
 本地安装 cli 确保项目基本运行
 
 ```shell
+# 安装cli 用来执行构建等操作
 yarn add @tarojs/cli
-
+# 预览
 yarn dev:weapp
 ```
+
+> 打开微信开发工具 工程目录需要指向构建出来的 dist 文件
 
 ![](https://tva1.sinaimg.cn/large/008i3skNgy1gwcdty8l85j312f0u075v.jpg)
 
 ![](https://tva1.sinaimg.cn/large/008i3skNgy1gwcdvk32z9j31hc0u00vc.jpg)
 
 ## 二、设置代码规范的 Eslint Prettier CommitLint
+
+- 代码规范 ESlint
+- 代码格式化 Prettier
+- 提交规范 CommitLint
 
 ### 1.安装依赖
 
@@ -49,7 +58,7 @@ yarn add @vue/eslint-config-prettier @vue/eslint-config-typescript eslint-plugin
 
 ### 2.解决 Eslint 和 Prettier 的冲突需设置.eslintrc.js 和 .prettierrc
 
-### 3.Ts 检查 确保符合 Ts 规范 Eslint 检查 确保符合 Eslint 规范
+### 3.添加 Ts 检查命令，确保符合 Ts 规范 。添加 Eslint 检查命令，确保符合 Eslint 规范
 
 ```shell
 yarn add vue-tsc -D

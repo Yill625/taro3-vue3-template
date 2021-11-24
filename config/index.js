@@ -1,4 +1,7 @@
 const path = require('path')
+const args = process.argv
+const isOpenDevTools = args.includes('--devtools')
+
 const config = {
   projectName: 'WechatAppDemo',
   date: '2021-11-12',
@@ -14,7 +17,9 @@ const config = {
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
-  plugins: ['@tarojs/plugin-html', '@tarojs/plugin-vue-devtools'],
+  plugins: isOpenDevTools
+    ? ['@tarojs/plugin-html', '@tarojs/plugin-vue-devtools']
+    : ['@tarojs/plugin-html'],
   defineConstants: {},
   copy: {
     patterns: [],

@@ -19,6 +19,7 @@
     "build:jd": "taro build --type jd",
     "build:quickapp": "taro build --type quickapp",
     "dev:weapp": "npm run build:weapp -- --watch",
+    "devtools:weapp": "npm run build:weapp -- --watch --devtools",
     "dev:swan": "npm run build:swan -- --watch",
     "dev:alipay": "npm run build:alipay -- --watch",
     "dev:tt": "npm run build:tt -- --watch",

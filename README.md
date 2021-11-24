@@ -254,6 +254,12 @@ export default store
 
 ![](https://tva1.sinaimg.cn/large/008i3skNgy1gwp59kvqatj31d403wjs6.jpg)
 
+默认不开启 devtools 调试 新增 script 开启
+
+```bash
+"devtools:weapp": "npm run build:weapp -- --watch --devtools"
+```
+
 ## 样式封装
 
 ### 公共样式

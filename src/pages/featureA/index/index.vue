@@ -16,6 +16,7 @@ useDidShow(() => {
 })
 usePullDownRefresh(() => {
   console.log('onPullDownRefresh')
+  Taro.vibrateShort()
   Taro.stopPullDownRefresh()
 })
 </script>

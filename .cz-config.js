@@ -21,7 +21,7 @@ module.exports = {
       value: 'build',
       name: '👷‍ 构建流程、外部依赖变更，比如升级 npm 包、修改 webpack 配置'
     },
-    { value: 'ci', name: '🔧 修改了 CI 配置、脚本' },
+    { value: 'ci', name: '🔧 修改了 CI 配置、脚本', emoji: '🔧' },
     {
       value: 'chore',
       name: '对构建过程或辅助工具和库的更改,不影响源文件、测试用例的其他操作'

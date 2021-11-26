@@ -72,7 +72,7 @@ module.exports = {
   },
 
   // 是否允许自定义填写 scope ，设置为 true ，会自动添加两个 scope 类型 [{ name: 'empty', value: false },{ name: 'custom', value: 'custom' }]
-  allowCustomScopes: true,
+  allowCustomScopes: false,
   allowBreakingChanges: ['feat', 'fix'],
   // skip any questions you want
   // skipQuestions: [],

@@ -13,7 +13,7 @@
 - Eslint Prettier CommitLint
 - 小程序分包配置
 - Taro3 配合 Vue DevTools 调试
-- 样式封装
+- 样式封装 1px 问题 底部安全区域适配
 
 # 本项目的搭建过程
 
@@ -285,6 +285,8 @@ page {
   padding-bottom: env(safe-area-inset-bottom);
 }
 ```
+
+### 1px 问题
 
 ### 超行省略
 

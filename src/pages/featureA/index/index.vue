@@ -9,10 +9,13 @@
 import { useDidShow, usePullDownRefresh } from '@/hooks/life'
 import NumberDisplay from '@/components/NumberDisplay.vue'
 import NumberSubmit from '@/components/NumberSubmit.vue'
-
 import Taro from '@tarojs/taro'
+import { getProvince } from '@/api/test'
 useDidShow(() => {
   console.log('onShow')
+  getProvince().then(res => {
+    console.log(res.result)
+  })
 })
 usePullDownRefresh(() => {
   console.log('onPullDownRefresh')

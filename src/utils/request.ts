@@ -49,7 +49,8 @@ const showToast = (title: string) => {
     icon: 'none'
   })
 }
-const showMessage = (message: string) => {
+const showMessage = (title: unknown) => {
+  const message = JSON.stringify(title).replace(/"/g, '')
   if (message.indexOf('Network') > -1) {
     showToast('升级中...')
   } else if (message.indexOf('timeout') > -1) {
@@ -65,20 +66,10 @@ const request = (options: AxiosRequestConfig = {}) => {
   return new Promise<ApiResult>((resolve, reject) => {
     instance(options)
       .then((response: AxiosResponse) => {
-        if (response?.status === 200) {
-          // 临时使用mock数据 使用mock数据 不验证code
-          if (options.url?.includes('mock')) {
-            const res: ApiResult = response.data
-            return resolve(res)
-          } else {
-            if (response?.data?.code === 0) {
-              return resolve(response.data)
-            } else {
-              return Promise.reject(response)
-            }
-          }
+        if (response?.status === 200 && response?.data?.code === 0) {
+          return resolve(response.data)
         } else {
-          return Promise.reject(response)
+          return reject(response)
         }
       })
       .catch(result => {
@@ -86,9 +77,7 @@ const request = (options: AxiosRequestConfig = {}) => {
           ////重新登陆 result?.data?.code === -1 ||
         } else {
           // 其他情况 code 非 0 情况 有message 就显示
-          const title = result?.data?.message ?? result?.message
-          const message = JSON.stringify(title).replace(/"/g, '')
-          showMessage(message)
+          showMessage(result?.data?.message ?? result?.message)
         }
         reject(result)
       })

@@ -29,12 +29,17 @@
     @cancel="onCancel"
     @ok="onOkAsync"
   />
+  <button @click="to">跳转分包页面</button>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+import Taro from '@tarojs/taro'
 import { Dialog as NutDialog, Cell as NutCell } from '@nutui/nutui-taro'
-
+const to = () => {
+  console.log(111)
+  Taro.navigateTo({ url: '/pages/featureA/index/index' })
+}
 const visible1 = ref(false)
 const visible2 = ref(false)
 const visible3 = ref(false)

@@ -6,11 +6,9 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { useStore } from 'vuex'
-import { key } from '@/store'
-const store = useStore(key)
-const getNumbers = computed(() => store.state.user.number)
-console.log(getNumbers.value)
+import { useCounter } from '@/stores'
+const count = useCounter()
+const getNumbers = computed(() => count.number)
 </script>
 
 <style>

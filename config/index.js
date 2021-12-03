@@ -18,8 +18,8 @@ const config = {
   sourceRoot: 'src',
   outputRoot: 'dist',
   plugins: isOpenDevTools
-    ? ['@tarojs/plugin-html', '@tarojs/plugin-vue-devtools']
-    : ['@tarojs/plugin-html'],
+    ? ['@tarojs/plugin-html', '@tarojs/plugin-vue-devtools', 'taro-plugin-pinia']
+    : ['@tarojs/plugin-html', 'taro-plugin-pinia'],
   defineConstants: {},
   copy: {
     patterns: [],

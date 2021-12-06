@@ -1,4 +1,4 @@
-# 使用 Taro3 + Vue3 + TypeScript + NutUi + Vuex4 开发微信小程序
+# 使用 Taro3 + Vue3 + TypeScript + NutUi + Pinia 开发微信小程序
 
 ## Vscode 插件安装
 
@@ -8,7 +8,7 @@
 
 ## 当前实现了的功能
 
-- Taro3 Vue3 Ts Vux4
+- Taro3 Vue3 Ts ~~Vux4~~ Pinia
 - 组件库 NutUI
 - Eslint Prettier CommitLint
 - 小程序分包配置
@@ -205,7 +205,7 @@ export function useReachBottom(callback) {
 
 ![](https://github.com/Yill625/taro3-vue3-template/blob/main/docs/2021-11-15%2014.15.39.gif)
 
-## Vuex 安装使用
+## ~~Vuex 安装使用~~
 
 ```js
 yarn add vuex@next --save
@@ -257,6 +257,22 @@ const store = createStore({
 })
 
 export default store
+```
+
+## 安装 [Pinia](https://pinia.esm.dev/) 进行状态管理
+
+```shell
+yarn add pinia
+yarn add taro-plugin-pinia
+
+```
+
+项目配置文件 config/index.js 中配置:
+
+```js
+// ...
+plugins: ['taro-plugin-pinia']
+// ...
 ```
 
 ## taro3 配合 Vue DevTools 调试

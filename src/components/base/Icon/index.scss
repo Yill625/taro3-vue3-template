@@ -1,0 +1,44 @@
+$icon-height: 20px !default;
+$icon-width: 20px !default;
+$icon-line-height: 20px !default;
+
+.liang-icon {
+  display: inline-block;
+  position: relative;
+  width: $icon-width;
+  height: $icon-height;
+  line-height: $icon-line-height;
+  text-align: right;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__img {
+    width: $icon-width;
+    height: $icon-height;
+    object-fit: contain;
+  }
+  &-loading,
+  &-loading1 {
+    display: inline-block;
+    animation: loadingCircle 1s infinite linear;
+  }
+}
+
+@-webkit-keyframes loadingCircle {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loadingCircle {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

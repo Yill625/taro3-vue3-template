@@ -10,6 +10,8 @@
     name="https://tva1.sinaimg.cn/large/008i3skNly1gx7dpjg8hhj305k05k746.jpg"
   ></LiangIcon>
   <Overlay v-model:visible="show">11111111111</Overlay>
+  <LiangButton :color="'red'">1111</LiangButton>
+  <nut-button type="primary">111111</nut-button>
 </template>
 <script lang="ts" setup>
 import { useDidShow, usePullDownRefresh } from '@/hooks/life'
@@ -17,6 +19,7 @@ import NumberDisplay from '@/components/NumberDisplay.vue'
 import NumberSubmit from '@/components/NumberSubmit.vue'
 import LiangIcon from '@/components/base/Icon/index.vue'
 import Overlay from '@/components/base/Overlay/index.vue'
+import LiangButton from '@/components/base/Button/index.vue'
 import { ref } from 'vue'
 const show = ref(false)
 import Taro from '@tarojs/taro'

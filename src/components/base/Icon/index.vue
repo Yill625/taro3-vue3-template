@@ -6,8 +6,8 @@ export const pxCheck = (value: string | number): string => {
 }
 
 const componentName = 'liang-' + 'icon'
-
-const LiangIcon = defineComponent({
+export default defineComponent({
+  name: componentName,
   props: {
     name: { type: String, default: '' },
     size: { type: [String, Number], default: '' },
@@ -49,7 +49,6 @@ const LiangIcon = defineComponent({
     }
   }
 })
-export default LiangIcon
 </script>
 <style lang="scss">
 @import './index.scss';

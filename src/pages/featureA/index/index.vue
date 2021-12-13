@@ -12,11 +12,12 @@ import NumberSubmit from '@/components/NumberSubmit.vue'
 import Taro from '@tarojs/taro'
 import { getProvince } from '@/api/test'
 useDidShow(() => {
-  console.log('onShow')
-  getProvince().then(res => {
-    console.log(res.result)
-  })
+  req()
 })
+const req = async () => {
+  const res = await getProvince()
+  console.log(res)
+}
 usePullDownRefresh(() => {
   console.log('onPullDownRefresh')
   Taro.vibrateShort()

@@ -1,7 +1,8 @@
 import request from '@/utils/request'
+import { testUrl } from './url'
 export const getProvince = () => {
   return request({
-    url: `http://127.0.0.1:3004/`,
+    url: `${testUrl}`,
     method: 'GET'
   })
 }

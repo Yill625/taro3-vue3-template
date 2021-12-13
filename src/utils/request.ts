@@ -5,23 +5,19 @@ import Taro from '@tarojs/taro'
 interface ApiResult {
   code: number
   message: string
-  // @ts-ignore
-  //eslint-disable-next-line
-  result?: any
+  result?: unknown
 }
 
 const instance = axios.create({
   // 超时时间 1 分钟
   timeout: 30 * 1000,
   headers: {
-    'x-client': 'web',
     'Content-Type': 'application/json;charset=UTF-8'
   }
 })
 
 instance.interceptors.request.use(
   (config: AxiosRequestConfig) => {
-    // const token = localStorage.getItem('access_token')
     const token = '111'
     config.headers = {
       Authorization: `Bearer ${token}`,
@@ -52,7 +48,7 @@ const showToast = (title: string) => {
 const showMessage = (title: unknown) => {
   const message = JSON.stringify(title).replace(/"/g, '')
   if (message.indexOf('Network') > -1) {
-    showToast('升级中...')
+    showToast('请求失败，请联系客服')
   } else if (message.indexOf('timeout') > -1) {
     showToast('请求超时')
   } else {

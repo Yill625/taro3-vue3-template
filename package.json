@@ -45,6 +45,8 @@
     "@tarojs/plugin-html": "3.3.12",
     "@tarojs/runtime": "3.3.12",
     "@tarojs/taro": "3.3.12",
+    "taro-axios": "^1.1.1",
+    "vue": "^3.0.0",
     "pinia": "^2.0.5",
     "taro-plugin-pinia": "^1.0.0",
     "vue": "^3.0.0"

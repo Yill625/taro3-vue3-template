@@ -1,4 +1,4 @@
-# 使用 Taro3 + Vue3 + TypeScript + NutUi + Vuex4 开发微信小程序
+# 使用 Taro3 + Vue3 + TypeScript + NutUi + Pinia 开发微信小程序
 
 ## Vscode 插件安装
 
@@ -8,7 +8,7 @@
 
 ## 当前实现了的功能
 
-- Taro3 Vue3 Ts Vux4
+- Taro3 Vue3 Ts ~~Vux4~~ Pinia
 - 组件库 NutUI
 - Eslint Prettier CommitLint
 - 小程序分包配置
@@ -153,7 +153,7 @@ createApp(App)
 
 ## 小程序分包配置
 
-> 随着业务代码和组件的引入越来越多，主包的大小一定会越来越大，超过 2m 的主包以后微信开发工具就无法使用预览的功能，为了提前做好准备在一开始就进行分包处理，主包只包含组件和公共代码，分包里放入业务代码
+> 随着业务代码和组件的引入越来越多，主包的大小一定会越来越大，超过 2m 的主包以后微信开发工具就无法使用预览的功能，为了提前做好准备在一开始就进行分包处理，主包只包含公共组件和公共代码，分包里放入业务代码和业务代码
 
 ```js
 //app.config.ts
@@ -176,6 +176,10 @@ export default {
 ```
 
 ![](https://tva1.sinaimg.cn/large/008i3skNgy1gwfoohwyzoj30sc0943yv.jpg)
+
+更多优化
+
+![](https://tva1.sinaimg.cn/large/008i3skNgy1gx0h5713vij31910u0agc.jpg)
 
 ## 使用 script setup 语法在 Taro3 实现小程序[页面生命周期方法](https://taro-docs.jd.com/taro/docs/vue-page)
 
@@ -201,7 +205,7 @@ export function useReachBottom(callback) {
 
 ![](https://github.com/Yill625/taro3-vue3-template/blob/main/docs/2021-11-15%2014.15.39.gif)
 
-## Vuex 安装使用
+## ~~Vuex 安装使用~~
 
 ```js
 yarn add vuex@next --save
@@ -253,6 +257,22 @@ const store = createStore({
 })
 
 export default store
+```
+
+## 安装 [Pinia](https://pinia.esm.dev/) 进行状态管理
+
+```shell
+yarn add pinia
+yarn add taro-plugin-pinia
+
+```
+
+项目配置文件 config/index.js 中配置:
+
+```js
+// ...
+plugins: ['taro-plugin-pinia']
+// ...
 ```
 
 ## taro3 配合 Vue DevTools 调试

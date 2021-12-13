@@ -29,84 +29,62 @@
     @cancel="onCancel"
     @ok="onOkAsync"
   />
+  <button @click="to">跳转分包页面</button>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { ref } from 'vue'
-export default {
-  setup() {
-    const visible1 = ref(false)
-    const visible2 = ref(false)
-    const visible3 = ref(false)
-    const visible4 = ref(false)
-    const closeContent = ref('')
-    const sleep = () => new Promise(resolve => setTimeout(resolve, 1000))
-    const countDown = (second: number) => `倒计时 ${second} 秒`
+import Taro from '@tarojs/taro'
+import { Dialog as NutDialog, Cell as NutCell } from '@nutui/nutui-taro'
+const to = () => {
+  console.log(111)
+  Taro.navigateTo({ url: '/pages/featureA/index/index' })
+}
+const visible1 = ref(false)
+const visible2 = ref(false)
+const visible3 = ref(false)
+const visible4 = ref(false)
+const closeContent = ref('')
+const sleep = () => new Promise(resolve => setTimeout(resolve, 1000))
+const countDown = (second: number) => `倒计时 ${second} 秒`
 
-    const onCancel = () => {
-      console.log('event cancel')
-    }
-    const onOk = () => {
-      console.log('event ok')
-    }
-    const onOkAsync = () => {
-      sleep()
-        .then(() => {
-          closeContent.value = countDown(2)
-          return sleep()
-        })
-        .then(() => {
-          closeContent.value = countDown(1)
-          return sleep()
-        })
-        .then(() => {
-          closeContent.value = countDown(0)
-        })
-        .then(() => {
-          visible4.value = false
-        })
-    }
+const onCancel = () => {
+  console.log('event cancel')
+}
+const onOk = () => {
+  console.log('event ok')
+}
+const onOkAsync = () => {
+  sleep()
+    .then(() => {
+      closeContent.value = countDown(2)
+      return sleep()
+    })
+    .then(() => {
+      closeContent.value = countDown(1)
+      return sleep()
+    })
+    .then(() => {
+      closeContent.value = countDown(0)
+    })
+    .then(() => {
+      visible4.value = false
+    })
+}
 
-    const baseClick = (): void => {
-      visible1.value = true
-    }
-    const noTitleClick = () => {
-      visible2.value = true
-    }
-    const tipsClick = () => {
-      visible3.value = true
-    }
+const baseClick = (): void => {
+  visible1.value = true
+}
+const noTitleClick = () => {
+  visible2.value = true
+}
+const tipsClick = () => {
+  visible3.value = true
+}
 
-    const componentClick = () => {
-      closeContent.value = `点击确定时3s后关闭`
-      visible4.value = true
-    }
-    const onShareAppMessage = res => {
-      if (res.from === 'button') {
-        // 来自页面内转发按钮
-        console.log(res.target)
-      }
-      return {
-        title: '自定义转发标题',
-        path: '/page/user?id=123'
-      }
-    }
-    return {
-      onShareAppMessage,
-      visible1,
-      visible2,
-      visible3,
-      visible4,
-      onCancel,
-      onOk,
-      closeContent,
-      onOkAsync,
-      baseClick,
-      noTitleClick,
-      componentClick,
-      tipsClick
-    }
-  }
+const componentClick = () => {
+  closeContent.value = `点击确定时3s后关闭`
+  visible4.value = true
 }
 </script>
 

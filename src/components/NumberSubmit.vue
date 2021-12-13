@@ -5,13 +5,12 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { useStore } from 'vuex'
-import { key } from '@/store'
-const store = useStore(key)
+import { useCounter } from '@/stores'
+const count = useCounter()
 const number = ref<number>(2)
 
 const addNumber = () => {
-  store.dispatch('addNumber', number.value)
+  count.add(number.value)
 }
 </script>
 

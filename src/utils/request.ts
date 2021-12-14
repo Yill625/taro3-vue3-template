@@ -59,6 +59,7 @@ const request = (options: AxiosRequestConfig = {}) => {
   Taro.showLoading({
     title: '加载中...'
   })
+  Taro.showNavigationBarLoading()
   return new Promise<ApiResult>((resolve, reject) => {
     instance(options)
       .then((response: AxiosResponse) => {
@@ -79,6 +80,7 @@ const request = (options: AxiosRequestConfig = {}) => {
       })
       .finally(() => {
         Taro.hideLoading()
+        Taro.hideNavigationBarLoading()
       })
   })
 }

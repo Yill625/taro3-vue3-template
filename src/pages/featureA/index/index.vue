@@ -21,6 +21,7 @@ const req = async () => {
 usePullDownRefresh(() => {
   console.log('onPullDownRefresh')
   Taro.vibrateShort()
+  req()
   Taro.stopPullDownRefresh()
 })
 </script>

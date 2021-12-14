@@ -6,8 +6,10 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { useCounter } from '@/stores'
+import { useCounter, useSystem } from '@/stores'
 const count = useCounter()
+const system = useSystem()
+console.log(system.options.path)
 const getNumbers = computed(() => count.number)
 </script>
 

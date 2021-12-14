@@ -1,5 +1,7 @@
 # 使用 Taro3 + Vue3 + TypeScript + NutUi + Pinia 开发微信小程序
 
+> 🏆有任何问题欢迎提 Issues
+
 ## Vscode 插件安装
 
 - Eslint

@@ -5,12 +5,12 @@ export default {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
     navigationBarTitleText: 'WeChat',
-    navigationBarTextStyle: 'black'
+    navigationBarTextStyle: 'black',
   },
   subpackages: [
     {
       root: 'pages/featureA',
-      pages: ['index/index']
-    }
-  ]
+      pages: ['index/index'],
+    },
+  ],
 }

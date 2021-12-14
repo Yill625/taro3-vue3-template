@@ -1,5 +1,5 @@
 export default {
   navigationBarTitleText: 'featureA',
   enablePullDownRefresh: true,
-  backgroundTextStyle: 'dark'
+  backgroundTextStyle: 'dark',
 } as PageConfig

@@ -14,7 +14,7 @@ const useSystem = defineStore({
   /** 状态 */
   state: () => ({
     options: {} as Options,
-    info: {} as Taro.getSystemInfoSync.Result
+    info: {} as Taro.getSystemInfoSync.Result,
   }),
   actions: {
     init(options: Options) {
@@ -22,7 +22,7 @@ const useSystem = defineStore({
     },
     setInfo(info: Taro.getSystemInfoSync.Result) {
       this.info = info
-    }
-  }
+    },
+  },
 })
 export { useSystem }

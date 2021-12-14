@@ -5,7 +5,7 @@ const useCounter = defineStore({
   id: 'count',
   /** 状态 */
   state: () => ({
-    number: 0
+    number: 0,
   }),
   actions: {
     increment() {
@@ -13,7 +13,7 @@ const useCounter = defineStore({
     },
     add(number) {
       this.number += number
-    }
-  }
+    },
+  },
 })
 export { useCounter }

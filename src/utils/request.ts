@@ -12,8 +12,8 @@ const instance = axios.create({
   // 超时时间 1 分钟
   timeout: 30 * 1000,
   headers: {
-    'Content-Type': 'application/json;charset=UTF-8'
-  }
+    'Content-Type': 'application/json;charset=UTF-8',
+  },
 })
 
 instance.interceptors.request.use(
@@ -22,7 +22,7 @@ instance.interceptors.request.use(
     config.headers = {
       Authorization: `Bearer ${token}`,
       token,
-      ...config.headers
+      ...config.headers,
     }
     return config
   },
@@ -42,7 +42,7 @@ instance.interceptors.response.use(
 const showToast = (title: string) => {
   Taro.showToast({
     title,
-    icon: 'none'
+    icon: 'none',
   })
 }
 const showMessage = (title: unknown) => {
@@ -57,7 +57,7 @@ const showMessage = (title: unknown) => {
 }
 const request = (options: AxiosRequestConfig = {}) => {
   Taro.showLoading({
-    title: '加载中...'
+    title: '加载中...',
   })
   Taro.showNavigationBarLoading()
   return new Promise<ApiResult>((resolve, reject) => {

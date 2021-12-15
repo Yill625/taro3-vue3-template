@@ -10,19 +10,22 @@ module.exports = {
   parserOptions: {
     parser: '@typescript-eslint/parser',
   },
-
+  globals: {
+    wx: 'readonly',
+  },
   rules: {
     'prettier/prettier': [
       'error',
       {
+        tabWidth: 2,
         singleQuote: true,
         semi: false,
         trailingComma: 'es5',
-        arrowParens: 'avoid',
+        arrowParens: 'always',
+        endOfLine: 'auto',
         printWidth: 100,
       },
     ],
-    'no-console': 'off',
     'no-debugger': 'error',
     'comma-dangle': [
       'error',
@@ -34,7 +37,6 @@ module.exports = {
         functions: 'never',
       },
     ],
-    quotes: 0,
     'vue/no-use-v-if-with-v-for': [
       'error',
       {

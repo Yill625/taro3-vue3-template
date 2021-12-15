@@ -48,8 +48,7 @@
     "taro-axios": "^1.1.1",
     "vue": "^3.0.0",
     "pinia": "^2.0.5",
-    "taro-plugin-pinia": "^1.0.0",
-    "vue": "^3.0.0"
+    "taro-plugin-pinia": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.0",

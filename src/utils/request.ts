@@ -69,7 +69,7 @@ const request = (options: AxiosRequestConfig = {}) => {
           return reject(response)
         }
       })
-      .catch(result => {
+      .catch((result) => {
         if (result?.status === 200 && result?.data?.code === -1) {
           ////重新登陆 result?.data?.code === -1 ||
         } else {

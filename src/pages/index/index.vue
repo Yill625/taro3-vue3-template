@@ -1,5 +1,5 @@
 <template>
-  <nut-cell title="基础弹框" @tap="baseClick"></nut-cell>
+  <nut-cell title="基础弹框" @click="baseClick"></nut-cell>
   <nut-dialog
     title="基础弹框"
     content="这是基础弹框。"
@@ -37,7 +37,6 @@ import { ref } from 'vue'
 import Taro from '@tarojs/taro'
 import { Dialog as NutDialog, Cell as NutCell } from '@nutui/nutui-taro'
 const to = () => {
-  console.log(111)
   Taro.navigateTo({ url: '/pages/featureA/index/index' })
 }
 const visible1 = ref(false)
@@ -45,7 +44,7 @@ const visible2 = ref(false)
 const visible3 = ref(false)
 const visible4 = ref(false)
 const closeContent = ref('')
-const sleep = () => new Promise(resolve => setTimeout(resolve, 1000))
+const sleep = () => new Promise((resolve) => setTimeout(resolve, 1000))
 const countDown = (second: number) => `倒计时 ${second} 秒`
 
 const onCancel = () => {

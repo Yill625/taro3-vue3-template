@@ -1,6 +1,6 @@
 <template>
   <NumberDisplay />
-  <NumberSubmit />
+  <number-submit />
   <div class="ellipsis-test ellipsis">
     测试超行省略
   </div>

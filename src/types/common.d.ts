@@ -1,5 +1,6 @@
 // https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/page.html
-declare interface PageConfig {
+declare const wx: object
+interface PageConfig {
   navigationBarBackgroundColor?: string
   navigationBarTextStyle?: string
   navigationBarTitleText: string

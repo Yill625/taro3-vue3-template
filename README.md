@@ -1,12 +1,35 @@
 # 使用 Taro3 + Vue3 + TypeScript + NutUi + Pinia 开发微信小程序
 
-> 🏆有任何问题欢迎提 Issues
+> 🏆 有任何问题欢迎提 Issues
 
 ## Vscode 插件安装
 
 - Eslint
 - Prettier
 - Volar
+
+## 如何使用
+
+1. 克隆项目
+
+```bash
+git clone https://github.com/Yill625/taro3-vue3-template.git
+```
+
+2. 进入项目目录安装依赖
+
+```bash
+cd taro3-vue3-template
+yarn install
+```
+
+3. 运行小程序开发编译
+
+```bash
+yarn dev:weapp
+```
+
+4. 打开微信开发工具 项目目录指向 dist 目录 填写自己的 AppId 或者使用测试 AppId
 
 ## 当前实现了的功能
 
@@ -166,14 +189,14 @@ export default {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
     navigationBarTitleText: 'WeChat',
-    navigationBarTextStyle: 'black'
+    navigationBarTextStyle: 'black',
   },
   subpackages: [
     {
       root: 'pages/featureA',
-      pages: ['index/index']
-    }
-  ]
+      pages: ['index/index'],
+    },
+  ],
 }
 ```
 
@@ -233,29 +256,29 @@ export const key: InjectionKey<Store<State>> = Symbol()
 
 const user = {
   state: {
-    number: [1, 2, 3]
+    number: [1, 2, 3],
   },
   mutations: {
     ADD_NUMBER(state: User, payload) {
       state.number.push(payload)
-    }
+    },
   },
   actions: {
     addNumber(context, number) {
       context.commit('ADD_NUMBER', number)
-    }
+    },
   },
   getters: {
     getNumbers(state) {
       return state.numbers
-    }
-  }
+    },
+  },
 }
 
 const store = createStore({
   modules: {
-    user
-  }
+    user,
+  },
 })
 
 export default store

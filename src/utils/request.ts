@@ -39,6 +39,7 @@ const showToast = (title: string) => {
   Taro.showToast({
     title,
     icon: 'none',
+    duration: 3000,
   })
 }
 const showMessage = (title: unknown) => {
@@ -51,6 +52,7 @@ const showMessage = (title: unknown) => {
     showToast(message)
   }
 }
+// Taro.showToast 和loading 是单例 所以只有成功时候hideLoading 其他情况showToast
 export default function request<T>(options: AxiosRequestConfig = {}) {
   Taro.showLoading({
     title: '加载中...',
@@ -61,8 +63,9 @@ export default function request<T>(options: AxiosRequestConfig = {}) {
       .then((response: AxiosResponse) => {
         if (response?.status === 200 && response?.data?.code === 0) {
           resolve(response.data.result)
+          Taro.hideLoading()
         } else {
-          return Promise.reject(response)
+          throw response
         }
       })
       .catch((result) => {
@@ -75,7 +78,6 @@ export default function request<T>(options: AxiosRequestConfig = {}) {
         reject(result)
       })
       .finally(() => {
-        Taro.hideLoading()
         Taro.hideNavigationBarLoading()
       })
   })

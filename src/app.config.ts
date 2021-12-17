@@ -10,7 +10,7 @@ export default {
   subpackages: [
     {
       root: 'pages/featureA',
-      pages: ['index/index'],
+      pages: ['index/index', 'nutui/index', 'request/index', 'css/index'],
     },
   ],
 }

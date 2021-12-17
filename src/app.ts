@@ -13,7 +13,7 @@ const App = createApp({
   onLaunch(options) {
     // 将启动参数放进到全局去
     const system = useSystem()
-    console.log(system.init(options))
+    system.init(options)
     system.setInfo(Taro.getSystemInfoSync())
   },
 

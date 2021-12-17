@@ -1,5 +1,4 @@
 // https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/page.html
-declare const wx: object
 interface PageConfig {
   navigationBarBackgroundColor?: string
   navigationBarTextStyle?: string
@@ -19,3 +18,4 @@ interface PageConfig {
   singlePage?: Object
   restartStrategy?: string
 }
+declare const wx: object

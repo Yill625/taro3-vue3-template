@@ -2,11 +2,6 @@ import axios, { AxiosRequestConfig, AxiosResponse, AxiosError } from 'taro-axios
 import Taro from '@tarojs/taro'
 
 // import { useRouter } from 'vue-router'
-interface ApiResult {
-  code: number
-  message: string
-  result?: unknown
-}
 
 const instance = axios.create({
   // 超时时间 1 分钟
@@ -55,18 +50,18 @@ const showMessage = (title: unknown) => {
     showToast(message)
   }
 }
-const request = (options: AxiosRequestConfig = {}) => {
+export default function request<T>(options: AxiosRequestConfig = {}) {
   Taro.showLoading({
     title: '加载中...',
   })
   Taro.showNavigationBarLoading()
-  return new Promise<ApiResult>((resolve, reject) => {
+  return new Promise<T>((resolve, reject) => {
     instance(options)
       .then((response: AxiosResponse) => {
         if (response?.status === 200 && response?.data?.code === 0) {
-          return resolve(response.data)
+          resolve(response.data.result)
         } else {
-          return reject(response)
+          return Promise.reject(response)
         }
       })
       .catch((result) => {
@@ -84,4 +79,3 @@ const request = (options: AxiosRequestConfig = {}) => {
       })
   })
 }
-export default request

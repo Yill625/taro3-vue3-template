@@ -8,6 +8,5 @@ import NumberDisplay from '@/components/NumberDisplay.vue'
 import NumberSubmit from '@/components/NumberSubmit.vue'
 import { useSystem } from '@/stores'
 const system = useSystem()
-console.log(system.info)
 const option = system.options
 </script>

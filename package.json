@@ -28,8 +28,8 @@
     "dev:qq": "npm run build:qq -- --watch",
     "dev:jd": "npm run build:jd -- --watch",
     "dev:quickapp": "npm run build:quickapp -- --watch",
-    "tsc": "vue-tsc --noEmit --skipLibCheck",
-    "lint": "eslint --ext .vue --ext .js --ext .ts src/"
+    "tsc": "vue-tsc  --noEmit --skipLibCheck",
+    "lint": "eslint --ext .vue --ext .js --ext .ts"
   },
   "browserslist": [
     "last 3 versions",
@@ -73,6 +73,12 @@
     "stylelint": "9.3.0",
     "typescript": "^4.1.0",
     "vue-loader": "^16.0.0-beta.8",
-    "vue-tsc": "^0.29.3"
+    "vue-tsc": "^0.29.3",
+    "lint-staged": "^10.5.4"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,vue,ts,tsx}": [
+      "yarn lint"
+    ]
   }
 }

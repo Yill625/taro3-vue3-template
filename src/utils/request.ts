@@ -26,14 +26,6 @@ instance.interceptors.request.use(
     Promise.reject(err)
   }
 )
-instance.interceptors.response.use(
-  (response: AxiosResponse) => {
-    return response
-  },
-  (err: AxiosError) => {
-    return Promise.reject(err)
-  }
-)
 
 const showToast = (title: string) => {
   Taro.showToast({
@@ -44,6 +36,7 @@ const showToast = (title: string) => {
 }
 const showMessage = (title: unknown) => {
   const message = JSON.stringify(title).replace(/"/g, '')
+  console.log(message)
   if (message.indexOf('Network') > -1) {
     showToast('请求失败，请联系客服')
   } else if (message.indexOf('timeout') > -1) {
@@ -65,17 +58,20 @@ export default function request<T>(options: AxiosRequestConfig = {}) {
           resolve(response.data.result)
           Taro.hideLoading()
         } else {
-          throw response
+          return Promise.reject(response)
         }
       })
-      .catch((result) => {
-        if (result?.status === 200 && result?.data?.code === -1) {
+      .catch((result: AxiosResponse) => {
+        if (result?.status) {
+          // 不要吃掉错误 抛出去另外处理
+          showMessage(result?.data?.message)
+          reject(result)
+        } else if (result?.status === 200 && result?.data?.code === -1) {
           ////重新登陆 result?.data?.code === -1 ||
         } else {
-          // 其他情况 code 非 0 情况 有message 就显示
-          showMessage(result?.data?.message ?? result?.message)
+          // 其他情况 code 非 0 情况 有message 就显示 状态码错误的时候不抛出错误
+          showMessage(result?.message)
         }
-        reject(result)
       })
       .finally(() => {
         Taro.hideNavigationBarLoading()

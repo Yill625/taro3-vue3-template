@@ -61,7 +61,7 @@ export default function request<T>(options: AxiosRequestConfig = {}) {
           return Promise.reject(response)
         }
       })
-      .catch((result: AxiosResponse) => {
+      .catch((result) => {
         if (result?.status) {
           // 不要吃掉错误 抛出去另外处理
           showMessage(result?.data?.message)

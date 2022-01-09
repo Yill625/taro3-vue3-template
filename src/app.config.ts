@@ -12,5 +12,9 @@ export default {
       root: 'pages/featureA',
       pages: ['index/index', 'nutui/index', 'request/index', 'css/index'],
     },
+    {
+      root: 'pages/music',
+      pages: ['login/index'],
+    },
   ],
 }

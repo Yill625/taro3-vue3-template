@@ -11,15 +11,29 @@ const instance = axios.create({
     'Content-Type': 'application/json;charset=UTF-8',
   },
 })
-
+let cookie = ''
+const setCookie = (config) => {
+  if (config.method === 'get' && cookie) {
+    config.params = {
+      ...config.params,
+      cookie,
+    }
+  }
+  if (config.method === 'post' && cookie) {
+    config.data = {
+      ...config.data,
+      cookie,
+    }
+  }
+}
 instance.interceptors.request.use(
   (config: AxiosRequestConfig) => {
-    const token = '111'
-    config.headers = {
-      Authorization: `Bearer ${token}`,
-      token,
-      ...config.headers,
+    if (!cookie) {
+      cookie = encodeURIComponent(Taro.getStorageSync('cookie'))
     }
+
+    cookie && setCookie(config)
+    console.log(config)
     return config
   },
   (err: AxiosError) => {
@@ -62,9 +76,10 @@ export default function request<T>(options: AxiosRequestConfig = {}) {
         }
       })
       .catch((result) => {
+        console.log(result)
         if (result?.status) {
           // 不要吃掉错误 抛出去另外处理
-          showMessage(result?.data?.message)
+          showMessage(result?.data?.msg)
           reject(result)
         } else if (result?.status === 200 && result?.data?.code === -1) {
           ////重新登陆 result?.data?.code === -1 ||

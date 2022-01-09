@@ -54,8 +54,8 @@ export default function request<T>(options: AxiosRequestConfig = {}) {
   return new Promise<T>((resolve, reject) => {
     instance(options)
       .then((response: AxiosResponse) => {
-        if (response?.status === 200 && response?.data?.code === 0) {
-          resolve(response.data.result)
+        if (response?.status === 200 && response?.data?.code === 200) {
+          resolve(response.data)
           Taro.hideLoading()
         } else {
           return Promise.reject(response)

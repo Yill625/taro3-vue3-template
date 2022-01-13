@@ -8,5 +8,4 @@
 # # 检查ts
 echo "---ts检查开始---"
 npx lint-staged
-npm run tsc
 echo "---ts检查结束---"

@@ -1,4 +1,5 @@
 <template>
+  <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">111</div>
   <button @click="success">请求code为0接口</button>
   <button @click="error">请求非code为0接口</button>
   <button @click="fail">请求状态码非200接口</button>
@@ -7,9 +8,13 @@
     下拉加载试试
   </div>
 </template>
+
 <script lang="ts" setup>
 import Taro, { useDidShow, usePullDownRefresh, useShareAppMessage } from '@tarojs/taro'
 import { getTest, getError, getFail } from '@/api/test'
+
+const activeColor = 'red'
+const fontSize = '30'
 useDidShow(() => {
   console.log('useDidShow')
   success()

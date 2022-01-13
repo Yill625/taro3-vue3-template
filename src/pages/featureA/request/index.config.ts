@@ -1,5 +1,6 @@
-export default {
+export default definePageConfig({
   navigationBarTitleText: 'featureA',
   enablePullDownRefresh: true,
   backgroundTextStyle: 'dark',
-} as PageConfig
+  enableShareAppMessage: true,
+})

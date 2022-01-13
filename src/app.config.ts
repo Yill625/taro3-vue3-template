@@ -1,4 +1,4 @@
-export default {
+export default defineAppConfig({
   pages: ['pages/index/index'],
   window: {
     backgroundColor: '#fff',
@@ -13,4 +13,4 @@ export default {
       pages: ['index/index', 'nutui/index', 'request/index', 'css/index'],
     },
   ],
-}
+})

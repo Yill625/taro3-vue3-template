@@ -31,6 +31,10 @@ yarn dev:weapp
 
 4. 打开微信开发工具 项目目录指向 dist 目录 填写自己的 AppId 或者使用测试 AppId
 
+## 升级 taro 3.4.0
+
+- 支持 Composition API 版本的小程序生命周期钩子 [文档](https://docs.taro.zone/docs/next/composition-api)
+
 ## 当前实现了的功能
 
 - Taro3 Vue3 Ts ~~Vux4~~ Pinia

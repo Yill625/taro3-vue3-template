@@ -75,10 +75,5 @@
 		"vue-loader": "^16.0.0-beta.8",
 		"vue-tsc": "^0.29.3",
 		"lint-staged": "^10.5.4"
-	},
-	"lint-staged": {
-		"src/**/*.{js,jsx,vue,ts,tsx}": [
-			"yarn lint"
-		]
 	}
 }

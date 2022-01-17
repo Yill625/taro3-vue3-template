@@ -213,11 +213,12 @@ export default {
 
 ![](https://tva1.sinaimg.cn/large/008i3skNgy1gx0h5713vij31910u0agc.jpg)
 
-## 使用 script setup 语法在 Taro3 实现小程序[页面生命周期方法](https://taro-docs.jd.com/taro/docs/vue-page)
+## ~~使用 script setup 语法在 Taro3 实现小程序[页面生命周期方法](https://taro-docs.jd.com/taro/docs/vue-page)~~ 替换使用 Taro 3.4.0 新特性
 
-使用 hooks 来封装
+~~使用 hooks 来封装~~
 
 ```ts
+// 原来封装代码 废弃
 import { getCurrentInstance } from '@tarojs/taro'
 import { onMounted } from 'vue'
 

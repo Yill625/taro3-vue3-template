@@ -1,14 +1,11 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-
-npx lint-staged
-
 # lint1
 # echo "---格式化检查开始---"
 # npm run lint
 # echo "---格式化检查结束---"
 # # 检查ts
 echo "---ts检查开始---"
-npm run tsc
+npx lint-staged
 echo "---ts检查结束---"

@@ -40,6 +40,11 @@ const showMessage = (title: unknown) => {
     showToast(message)
   }
 }
+interface ApiResult<T> {
+  code: number
+  message?: string
+  result: T
+}
 // Taro.showToast 和loading 是单例 所以只有成功时候hideLoading 其他情况showToast
 export default function request<T>(options: AxiosRequestConfig = {}) {
   Taro.showLoading({
@@ -48,7 +53,7 @@ export default function request<T>(options: AxiosRequestConfig = {}) {
   Taro.showNavigationBarLoading()
   return new Promise<T>((resolve, reject) => {
     instance(options)
-      .then((response: AxiosResponse) => {
+      .then((response: AxiosResponse<ApiResult<T>>) => {
         if (response?.status === 200 && response?.data?.code === 0) {
           resolve(response.data.result)
           Taro.hideLoading()
@@ -60,7 +65,7 @@ export default function request<T>(options: AxiosRequestConfig = {}) {
         if (result?.status === 200 && result?.data?.code === -1) {
           //重新登陆 result?.data?.code === -1 ||
         } else {
-          // 其他情况 code 非 0 情况 有message 就显示
+          // 其他情况 code 非 0 情况 有 message 就显示
           showMessage(result?.data?.message ?? result?.message)
         }
         reject(result)

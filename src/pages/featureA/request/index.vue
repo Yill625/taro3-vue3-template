@@ -1,10 +1,13 @@
 <template>
-  <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">111</div>
+  <p>测试的接口请求是本地的express服务</p>
+  <span>地址：https://github.com/Yill625/express-demo</span>
+  <image src="https://tva1.sinaimg.cn/large/008i3skNgy1gxfn11mr8yj314w0u0tdg.jpg"></image>
+
   <button @click="success">请求code为0接口</button>
   <button @click="error">请求非code为0接口</button>
   <button @click="fail">请求状态码非200接口</button>
   <button @click="empty">服务器不存在</button>
-  <image src="https://tva1.sinaimg.cn/large/008i3skNgy1gxfn11mr8yj314w0u0tdg.jpg"></image>
+
   <div>
     下拉加载试试
   </div>
@@ -14,8 +17,6 @@
 import Taro, { useDidShow, usePullDownRefresh, useShareAppMessage } from '@tarojs/taro'
 import { getTest, getError, getFail, getEmpty } from '@/api/test'
 
-const activeColor = 'red'
-const fontSize = '30'
 useDidShow(() => {
   console.log('useDidShow')
   success()

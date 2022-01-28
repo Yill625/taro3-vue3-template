@@ -7,12 +7,17 @@ interface IPerson {
   avatar: string
 }
 export const getTest = async () => {
-  return await request<IPerson[]>({ url: `${mockUrl}/api/test` })
+  return await request<IPerson[]>({ url: `${mockUrl}/success` })
 }
 
 export const getError = async () => {
-  return await request<IPerson[]>({ url: `${mockUrl}/zone` })
+  return await request<IPerson[]>({ url: `${mockUrl}/success-message` })
 }
+
 export const getFail = async () => {
-  return await request<IPerson[]>({ url: `https://127.0.0.1` })
+  return await request<IPerson[]>({ url: `${mockUrl}/error` })
+}
+
+export const getEmpty = async () => {
+  return await request<IPerson[]>({ url: `http://localhost1` })
 }

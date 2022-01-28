@@ -1,1 +1,2 @@
-export const mockUrl = 'https://www.fastmock.site/mock/8758c50fc11f2cdf32329dc978115c51/stark'
+// https://github.com/Yill625/express-demo 接口项目地址
+export const mockUrl = 'http://localhost:3000'

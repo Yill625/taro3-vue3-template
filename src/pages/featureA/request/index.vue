@@ -3,6 +3,7 @@
   <button @click="success">请求code为0接口</button>
   <button @click="error">请求非code为0接口</button>
   <button @click="fail">请求状态码非200接口</button>
+  <button @click="empty">服务器不存在</button>
   <image src="https://tva1.sinaimg.cn/large/008i3skNgy1gxfn11mr8yj314w0u0tdg.jpg"></image>
   <div>
     下拉加载试试
@@ -11,7 +12,7 @@
 
 <script lang="ts" setup>
 import Taro, { useDidShow, usePullDownRefresh, useShareAppMessage } from '@tarojs/taro'
-import { getTest, getError, getFail } from '@/api/test'
+import { getTest, getError, getFail, getEmpty } from '@/api/test'
 
 const activeColor = 'red'
 const fontSize = '30'
@@ -23,15 +24,19 @@ useDidShow(() => {
 })
 const success = async () => {
   const result = await getTest()
-  console.log(result?.length && result[0].name)
+  console.log(result)
 }
 const error = async () => {
   const result = await getError()
-  console.log(result?.length && result[0].name)
+  console.log(result)
 }
 const fail = async () => {
   const result = await getFail()
-  console.log(result?.length && result[0].name)
+  console.log(result)
+}
+const empty = async () => {
+  const result = await getEmpty()
+  console.log(result)
 }
 usePullDownRefresh(async () => {
   Taro.vibrateShort()

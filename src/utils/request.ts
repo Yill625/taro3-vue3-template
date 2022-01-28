@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig, AxiosResponse, AxiosError } from 'taro-axios'
+import axios, { AxiosRequestConfig, AxiosResponse } from 'taro-axios'
 import Taro from '@tarojs/taro'
 
 // import { useRouter } from 'vue-router'
@@ -12,28 +12,15 @@ const instance = axios.create({
   },
 })
 
-instance.interceptors.request.use(
-  (config: AxiosRequestConfig) => {
-    const token = '111'
-    config.headers = {
-      Authorization: `Bearer ${token}`,
-      token,
-      ...config.headers,
-    }
-    return config
-  },
-  (err: AxiosError) => {
-    Promise.reject(err)
+instance.interceptors.request.use((config: AxiosRequestConfig) => {
+  const token = '111'
+  config.headers = {
+    Authorization: `Bearer ${token}`,
+    token,
+    ...config.headers,
   }
-)
-instance.interceptors.response.use(
-  (response: AxiosResponse) => {
-    return response
-  },
-  (err: AxiosError) => {
-    return Promise.reject(err)
-  }
-)
+  return config
+})
 
 const showToast = (title: string) => {
   Taro.showToast({
@@ -44,6 +31,7 @@ const showToast = (title: string) => {
 }
 const showMessage = (title: unknown) => {
   const message = JSON.stringify(title).replace(/"/g, '')
+  // TODO Request failed with status code 500 优化展示逻辑
   if (message.indexOf('Network') > -1) {
     showToast('请求失败，请联系客服')
   } else if (message.indexOf('timeout') > -1) {
@@ -70,7 +58,7 @@ export default function request<T>(options: AxiosRequestConfig = {}) {
       })
       .catch((result) => {
         if (result?.status === 200 && result?.data?.code === -1) {
-          ////重新登陆 result?.data?.code === -1 ||
+          //重新登陆 result?.data?.code === -1 ||
         } else {
           // 其他情况 code 非 0 情况 有message 就显示
           showMessage(result?.data?.message ?? result?.message)

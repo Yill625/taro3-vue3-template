@@ -31,7 +31,11 @@ yarn dev:weapp
 
 4. 打开微信开发工具 项目目录指向 dist 目录 填写自己的 AppId 或者使用测试 AppId
 
-## 升级 taro 3.4.0
+## 升级 taro 3.5.7 (2022.11)
+
+[升级 Taro3.5 指南](https://docs.taro.zone/blog/2022/07/26/Taro-3.5)
+
+## 升级 taro 3.4.0 (2021.10)
 
 - 支持 Composition API 版本的小程序生命周期钩子 [文档](https://docs.taro.zone/docs/next/composition-api)
 - 支持 `<style>` v-bind 语法
@@ -218,9 +222,8 @@ export default {
 ~~使用 hooks 来封装~~
 
 ```ts
-// 原来封装代码 废弃
-import { getCurrentInstance } from '@tarojs/taro'
-import { onMounted } from 'vue'
+import { value getCurrentInstance } from '@tarojs/taro'
+import { value onMounted } from 'vue'
 
 const Current = getCurrentInstance()
 
@@ -249,17 +252,15 @@ yarn add vuex@next --save
 > 实现 vuex Ts 的提示 并进行模块化处理
 
 ```ts
-import { createStore, Store } from 'vuex'
-import { InjectionKey } from 'vue'
+import { value createStore, value Store } from 'vuex'
+import { value InjectionKey } from 'vue'
 
-// 定义模块类型
 interface User {
   number: number[]
 }
 export interface State {
   user: User
 }
-// define injection key
 export const key: InjectionKey<Store<State>> = Symbol()
 
 const user = {
@@ -294,19 +295,17 @@ export default store
 
 ## 安装 [Pinia](https://pinia.esm.dev/) 进行状态管理
 
-```shell
+````shell
 yarn add pinia
 yarn add taro-plugin-pinia
 
-```
-
-项目配置文件 config/index.js 中配置:
+```项目配置文件 config/index.js 中配置:
 
 ```js
 // ...
 plugins: ['taro-plugin-pinia']
 // ...
-```
+````
 
 ## taro3 配合 Vue DevTools 调试
 

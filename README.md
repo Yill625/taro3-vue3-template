@@ -35,7 +35,21 @@ yarn dev:weapp
 
 [升级 Taro3.5 指南](https://docs.taro.zone/blog/2022/07/26/Taro-3.5)
 
-## 升级 taro 3.4.0 (2021.10)
+1. taro update self 3.5.7
+2. taro update project 3.5.7
+3. vue3 add @vue/babel-plugin-jsx @tarojs/plugin-framework-vue3
+
+升级 webpack5
+
+![](https://tva1.sinaimg.cn/large/008vxvgGgy1h87e5tfas0j319k0u00vg.jpg)
+[pinia 报错](https://github.com/vuejs/pinia/pull/967)
+
+````bash
+yarn remove @tarojs/mini-runner @tarojs/webpack-runner
+
+yarn add @tarojs/webpack5-runner
+
+```## 升级 taro 3.4.0 (2021.10)
 
 - 支持 Composition API 版本的小程序生命周期钩子 [文档](https://docs.taro.zone/docs/next/composition-api)
 - 支持 `<style>` v-bind 语法
@@ -59,7 +73,7 @@ yarn dev:weapp
 
 ```shell
 npx @tarojs/cli init WechatAppDemo
-```
+````
 
 > 使用 npx 可以不用全局先安装 cli 工具，直接下载最新 Taro3 工程
 

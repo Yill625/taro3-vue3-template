@@ -3194,7 +3194,7 @@
 
 "@vue/devtools-api@^6.4.5":
   version "6.4.5"
-  resolved "https://npm.bu6.io:443/@vue%2fdevtools-api/-/devtools-api-6.4.5.tgz#d54e844c1adbb1e677c81c665ecef1a2b4bb8380"
+  resolved "https://registry.npm.taobao.org/@vue%2fdevtools-api/-/devtools-api-6.4.5.tgz#d54e844c1adbb1e677c81c665ecef1a2b4bb8380"
   integrity sha512-JD5fcdIuFxU4fQyXUu3w2KpAJHzTVdN+p4iOX2lMWSHMOoQdMAcpFLZzm9Z/2nmsoZ1a96QEhZ26e50xLBsgOQ==
 
 "@vue/devtools@6.0.0-beta.15":
@@ -11444,7 +11444,7 @@ pify@^4.0.1:
 
 pinia@^2.0.24:
   version "2.0.24"
-  resolved "https://npm.bu6.io:443/pinia/-/pinia-2.0.24.tgz#babf12207931f85b31d7451b55c0d76785b91b51"
+  resolved "https://registry.npm.taobao.org/pinia/-/pinia-2.0.24.tgz#babf12207931f85b31d7451b55c0d76785b91b51"
   integrity sha512-DDLd4Iphyc+6PYYYbx7jkb6WP9gecgu9bz9huyB5rb7CdJI3DhzYiZI+/Ih8MLewRrP9DSpslF/BgSNrJtZU7A==
   dependencies:
     "@vue/devtools-api" "^6.4.5"

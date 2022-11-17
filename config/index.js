@@ -4,6 +4,9 @@ const isOpenDevTools = args.includes('--devtools')
 
 const config = {
   compiler: 'webpack5',
+  cache: {
+    enable: true,
+  },
   projectName: 'WechatAppDemo',
   date: '2021-11-12',
   designWidth: 375,
@@ -67,7 +70,7 @@ const config = {
   },
 }
 
-module.exports = function(merge) {
+module.exports = function (merge) {
   if (process.env.NODE_ENV === 'development') {
     return merge({}, config, require('./dev'))
   }

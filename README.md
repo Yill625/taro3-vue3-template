@@ -41,15 +41,29 @@ yarn dev:weapp
 
 升级 webpack5
 
-![](https://tva1.sinaimg.cn/large/008vxvgGgy1h87e5tfas0j319k0u00vg.jpg)
-[pinia 报错](https://github.com/vuejs/pinia/pull/967)
-
-````bash
+```bash
 yarn remove @tarojs/mini-runner @tarojs/webpack-runner
 
 yarn add @tarojs/webpack5-runner
 
-```## 升级 taro 3.4.0 (2021.10)
+```
+
+![](https://tva1.sinaimg.cn/large/008vxvgGgy1h87e5tfas0j319k0u00vg.jpg)
+[pinia 报错](https://github.com/vuejs/pinia/pull/967)
+
+```bash
+# 升级 pinia
+yarn upgrade pinia --latest
+```
+
+webpack5 开启持久化缓存
+
+首次编译
+![](https://tva1.sinaimg.cn/large/008vxvgGgy1h888lry73zj30vl0u0jtb.jpg)
+第二次编译
+![](https://tva1.sinaimg.cn/large/008vxvgGgy1h888n3bw2kj30x20j2n01.jpg)
+
+## 升级 taro 3.4.0 (2021.10)
 
 - 支持 Composition API 版本的小程序生命周期钩子 [文档](https://docs.taro.zone/docs/next/composition-api)
 - 支持 `<style>` v-bind 语法
@@ -73,7 +87,7 @@ yarn add @tarojs/webpack5-runner
 
 ```shell
 npx @tarojs/cli init WechatAppDemo
-````
+```
 
 > 使用 npx 可以不用全局先安装 cli 工具，直接下载最新 Taro3 工程
 
@@ -184,10 +198,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import { Button, Cell, Icon } from '@nutui/nutui-taro'
 import '@nutui/nutui-taro/dist/style.css'
-createApp(App)
-  .use(Button)
-  .use(Cell)
-  .use(Icon)
+createApp(App).use(Button).use(Cell).use(Icon)
 ```
 
 ![](https://tva1.sinaimg.cn/large/008i3skNgy1gweuu0eovyj31fu0ic403.jpg)

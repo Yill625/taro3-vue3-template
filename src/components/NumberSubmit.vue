@@ -1,7 +1,7 @@
 <template>
   <input v-model="number" type="number" class="input van-hairline--top" />
-  <nut-button @tap="addNumber" class="hairline--top">Add new number</nut-button>
-  <button @tap="addNumber">1212</button>
+  <nut-button @click="addNumber" class="hairline--top">Add new number</nut-button>
+  <button @click="addNumber">1212</button>
 </template>
 
 <script lang="ts" setup>

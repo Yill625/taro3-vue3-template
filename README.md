@@ -1,8 +1,8 @@
 # 使用 Taro3 + Vue3 + TypeScript + NutUi + Pinia 开发微信小程序
 
-> 🏆 有任何问题欢迎提 Issues
+> 🏆 有关于任何小程序问题欢迎提 Issues
 
-## Vscode 插件安装
+## 准备工作：Vscode 插件安装
 
 - Eslint
 - Prettier
@@ -31,7 +31,48 @@ yarn dev:weapp
 
 4. 打开微信开发工具 项目目录指向 dist 目录 填写自己的 AppId 或者使用测试 AppId
 
-## 升级 taro 3.4.0
+## 最新更新 taro 3.5.7 (2022.11)
+
+### [update Taro3.5 指南](https://docs.taro.zone/blog/2022/07/26/Taro-3.5)
+
+1. taro update self 3.5.7
+2. taro update project 3.5.7
+3. vue3 add @vue/babel-plugin-jsx @tarojs/plugin-framework-vue3
+
+### Update Webpack5
+
+```bash
+yarn remove @tarojs/mini-runner @tarojs/webpack-runner
+
+yarn add @tarojs/webpack5-runner
+
+
+```
+
+### Update Pinia
+
+![](https://tva1.sinaimg.cn/large/008vxvgGgy1h87e5tfas0j319k0u00vg.jpg)
+[pinia 报错](https://github.com/vuejs/pinia/pull/967)
+
+```bash
+# 升级 pinia
+yarn upgrade pinia --latest
+```
+
+### webpack5 开启持久化缓存
+
+首次编译
+![](https://tva1.sinaimg.cn/large/008vxvgGgy1h888lry73zj30vl0u0jtb.jpg)
+第二次编译
+![](https://tva1.sinaimg.cn/large/008vxvgGgy1h888n3bw2kj30x20j2n01.jpg)
+
+### Update NutUi
+
+```bash
+yarn upgrade @nutui/nutui-taro --latest
+```
+
+## 升级 taro 3.4.0 (2021.10)
 
 - 支持 Composition API 版本的小程序生命周期钩子 [文档](https://docs.taro.zone/docs/next/composition-api)
 - 支持 `<style>` v-bind 语法
@@ -166,10 +207,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import { Button, Cell, Icon } from '@nutui/nutui-taro'
 import '@nutui/nutui-taro/dist/style.css'
-createApp(App)
-  .use(Button)
-  .use(Cell)
-  .use(Icon)
+createApp(App).use(Button).use(Cell).use(Icon)
 ```
 
 ![](https://tva1.sinaimg.cn/large/008i3skNgy1gweuu0eovyj31fu0ic403.jpg)
@@ -218,9 +256,8 @@ export default {
 ~~使用 hooks 来封装~~
 
 ```ts
-// 原来封装代码 废弃
-import { getCurrentInstance } from '@tarojs/taro'
-import { onMounted } from 'vue'
+import { value getCurrentInstance } from '@tarojs/taro'
+import { value onMounted } from 'vue'
 
 const Current = getCurrentInstance()
 
@@ -249,17 +286,15 @@ yarn add vuex@next --save
 > 实现 vuex Ts 的提示 并进行模块化处理
 
 ```ts
-import { createStore, Store } from 'vuex'
-import { InjectionKey } from 'vue'
+import { value createStore, value Store } from 'vuex'
+import { value InjectionKey } from 'vue'
 
-// 定义模块类型
 interface User {
   number: number[]
 }
 export interface State {
   user: User
 }
-// define injection key
 export const key: InjectionKey<Store<State>> = Symbol()
 
 const user = {
@@ -294,19 +329,17 @@ export default store
 
 ## 安装 [Pinia](https://pinia.esm.dev/) 进行状态管理
 
-```shell
+````shell
 yarn add pinia
 yarn add taro-plugin-pinia
 
-```
-
-项目配置文件 config/index.js 中配置:
+```项目配置文件 config/index.js 中配置:
 
 ```js
 // ...
 plugins: ['taro-plugin-pinia']
 // ...
-```
+````
 
 ## taro3 配合 Vue DevTools 调试
 

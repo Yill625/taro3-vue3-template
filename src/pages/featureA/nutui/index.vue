@@ -29,11 +29,25 @@
     @cancel="onCancel"
     @ok="onOkAsync"
   />
+
+  <nut-cell :title="`基本用法`" desc="" @click="base = true"></nut-cell>
+  <NutSku
+    v-model:visible="base"
+    :sku="data.sku"
+    :goods="data.goods"
+    @selectSku="selectSku"
+    @clickBtnOperate="clickBtnOperate"
+    @close="close"
+  ></NutSku>
+  <!-- <nut-watermark class="mark1" z-index="1" content="nut-ui-water-mark"></nut-watermark> -->
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
-import { Dialog as NutDialog, Cell as NutCell } from '@nutui/nutui-taro'
+import { ref, reactive, onMounted } from 'vue'
+import { Dialog as NutDialog, Cell as NutCell, Sku as NutSku } from '@nutui/nutui-taro'
+import type { Sku, Goods } from '@/api/goods'
+import { getGoods } from '@/api/goods'
+
 const visible1 = ref(false)
 const visible2 = ref(false)
 const visible3 = ref(false)
@@ -80,6 +94,42 @@ const componentClick = () => {
   closeContent.value = `点击确定时3s后关闭`
   visible4.value = true
 }
+
+const base = ref(false)
+const data = reactive<{
+  sku: Sku[]
+  goods: Goods | {}
+}>({
+  sku: [],
+  goods: {},
+})
+
+onMounted(async () => {
+  const res = await getGoods()
+  const { Sku, Goods } = res
+  data.sku = Sku
+  data.goods = Goods
+})
+// 切换规格类目
+const selectSku = (ss) => {
+  const { sku, parentIndex } = ss
+  if (sku.disable) return false
+  data.sku[parentIndex].list.forEach((s) => {
+    s.active = s.id === sku.id
+  })
+  data.goods = {
+    skuId: sku.id,
+    price: '4599.00',
+    imagePath:
+      'https//img14.360buyimg.com/n4/jfs/t1/215845/12/3788/221990/618a5c4dEc71cb4c7/7bd6eb8d17830991.jpg',
+  }
+}
+// 底部操作按钮触发
+const clickBtnOperate = (op: string) => {
+  console.log('点击了操作按钮', op)
+}
+// 关闭商品规格弹框
+const close = () => {}
 </script>
 
 <style lang="scss">

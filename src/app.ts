@@ -2,7 +2,6 @@ import { createApp } from 'vue'
 import { setupStore } from '@/stores'
 import setNutUi from './nutui'
 import { useSystem } from '@/stores'
-import Taro from '@tarojs/taro'
 import './app.scss'
 
 const App = createApp({
@@ -14,7 +13,6 @@ const App = createApp({
     // 将启动参数放进到全局去
     const system = useSystem()
     system.init(options)
-    system.setInfo(Taro.getSystemInfoSync())
   },
 
   // 对应 onShow

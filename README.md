@@ -33,13 +33,13 @@ yarn dev:weapp
 
 ## 最新更新 taro 3.5.7 (2022.11)
 
-### [update Taro3.5 指南](https://docs.taro.zone/blog/2022/07/26/Taro-3.5)
+### [ Taro3.5 指南](https://docs.taro.zone/blog/2022/07/26/Taro-3.5)
 
 1. taro update self 3.5.7
 2. taro update project 3.5.7
 3. vue3 add @vue/babel-plugin-jsx @tarojs/plugin-framework-vue3
 
-### Update Webpack5
+### Webpack5
 
 ```bash
 yarn remove @tarojs/mini-runner @tarojs/webpack-runner
@@ -49,7 +49,7 @@ yarn add @tarojs/webpack5-runner
 
 ```
 
-### Update Pinia
+### Pinia
 
 ![](https://tva1.sinaimg.cn/large/008vxvgGgy1h87e5tfas0j319k0u00vg.jpg)
 [pinia 报错](https://github.com/vuejs/pinia/pull/967)
@@ -66,7 +66,7 @@ yarn upgrade pinia --latest
 第二次编译
 ![](https://tva1.sinaimg.cn/large/008vxvgGgy1h888n3bw2kj30x20j2n01.jpg)
 
-### Update NutUi
+### NutUi
 
 ```bash
 yarn upgrade @nutui/nutui-taro --latest

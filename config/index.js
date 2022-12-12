@@ -5,7 +5,7 @@ const isOpenDevTools = args.includes('--devtools')
 const config = {
   compiler: 'webpack5',
   cache: {
-    enable: true,
+    enable: false,
   },
   projectName: 'WechatAppDemo',
   date: '2021-11-12',

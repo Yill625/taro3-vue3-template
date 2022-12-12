@@ -1,7 +1,5 @@
 // 根据appId 打包到不同小程序去
-const index = process.env.npm_config_argv
-  ? JSON.parse(process.env.npm_config_argv).remain[process.env.NODE_ENV === 'development' ? 1 : 0]
-  : 'wx00af2d3955d230c2'
+const index = process.argv[5]
 const xcx = {
   wx00af2d3955d230c2: {
     page: ['pages/index/index'],
@@ -12,7 +10,11 @@ const xcx = {
       },
     ],
   },
+  wx230f337c0b133c33: {
+    page: ['pages/index/index'],
+  },
 }
+console.log('当前的打包的小程序是：', index)
 
 export default defineAppConfig({
   pages: xcx[index].page,
@@ -23,5 +25,5 @@ export default defineAppConfig({
     navigationBarTitleText: 'WeChat',
     navigationBarTextStyle: 'black',
   },
-  subpackages: xcx[index].subpackages,
+  subpackages: xcx[index].subpackages || [],
 })

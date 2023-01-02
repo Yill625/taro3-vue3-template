@@ -1,16 +1,14 @@
 <template>
   <p>测试的接口请求是本地的express服务</p>
   <span>地址：https://github.com/Yill625/express-demo</span>
-  <image src="https://tva1.sinaimg.cn/large/008i3skNgy1gxfn11mr8yj314w0u0tdg.jpg"></image>
+  <image src="https://tvax1.sinaimg.cn/large/008i3skNgy1gxfn11mr8yj314w0u0tdg.jpg"></image>
 
   <button @click="success">请求code为0接口</button>
   <button @click="error">请求非code为0接口</button>
   <button @click="fail">请求状态码非200接口</button>
   <button @click="empty">服务器不存在</button>
 
-  <div>
-    下拉加载试试
-  </div>
+  <div>下拉加载试试</div>
 </template>
 
 <script lang="ts" setup>

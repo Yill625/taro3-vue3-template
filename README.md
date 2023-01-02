@@ -51,7 +51,7 @@ yarn add @tarojs/webpack5-runner
 
 ### Pinia
 
-![](https://tva1.sinaimg.cn/large/008vxvgGgy1h87e5tfas0j319k0u00vg.jpg)
+![](https://tvax1.sinaimg.cn/large/008vxvgGgy1h87e5tfas0j319k0u00vg.jpg)
 [pinia 报错](https://github.com/vuejs/pinia/pull/967)
 
 ```bash
@@ -62,9 +62,9 @@ yarn upgrade pinia --latest
 ### webpack5 开启持久化缓存
 
 首次编译
-![](https://tva1.sinaimg.cn/large/008vxvgGgy1h888lry73zj30vl0u0jtb.jpg)
+![](https://tvax1.sinaimg.cn/large/008vxvgGgy1h888lry73zj30vl0u0jtb.jpg)
 第二次编译
-![](https://tva1.sinaimg.cn/large/008vxvgGgy1h888n3bw2kj30x20j2n01.jpg)
+![](https://tvax1.sinaimg.cn/large/008vxvgGgy1h888n3bw2kj30x20j2n01.jpg)
 
 ### NutUi
 
@@ -100,7 +100,7 @@ npx @tarojs/cli init WechatAppDemo
 
 > 使用 npx 可以不用全局先安装 cli 工具，直接下载最新 Taro3 工程
 
-![](https://tva1.sinaimg.cn/large/008i3skNgy1gwcc2zv9q1j313i0tsjxp.jpg)
+![](https://tvax1.sinaimg.cn/large/008i3skNgy1gwcc2zv9q1j313i0tsjxp.jpg)
 
 本地安装 cli 确保项目基本运行
 
@@ -113,9 +113,9 @@ yarn dev:weapp
 
 > 打开微信开发工具 工程目录需要指向构建出来的 dist 文件
 
-![](https://tva1.sinaimg.cn/large/008i3skNgy1gwcdty8l85j312f0u075v.jpg)
+![](https://tvax1.sinaimg.cn/large/008i3skNgy1gwcdty8l85j312f0u075v.jpg)
 
-![](https://tva1.sinaimg.cn/large/008i3skNgy1gwcdvk32z9j31hc0u00vc.jpg)
+![](https://tvax1.sinaimg.cn/large/008i3skNgy1gwcdvk32z9j31hc0u00vc.jpg)
 
 ## 二、设置代码规范的 Eslint Prettier CommitLint
 
@@ -146,7 +146,7 @@ yarn add vue-tsc -D
 }
 ```
 
-![](https://tva1.sinaimg.cn/large/008i3skNgy1gwcf8vv04xj31uw0lidiz.jpg)
+![](https://tvax1.sinaimg.cn/large/008i3skNgy1gwcf8vv04xj31uw0lidiz.jpg)
 
 ### 4.添加 husky 触发 Git 钩子来保证代码提交时 Ts 检查和 Eslint 检查都符合规范
 
@@ -160,11 +160,11 @@ npx husky install
 npx husky add .husky/pre-commit "echo test"
 ```
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gwcg81i3ipj310s072gmq.jpg)
+![](https://tvax1.sinaimg.cn/large/008i3skNly1gwcg81i3ipj310s072gmq.jpg)
 
 编辑 pre-commit 执行 Eslint 检查和 Ts 检查
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gwcgapvfw1j30w00faq4x.jpg)
+![](https://tvax1.sinaimg.cn/large/008i3skNly1gwcgapvfw1j30w00faq4x.jpg)
 
 ### 5. 配置 [commitlint](https://github.com/conventional-changelog/commitlint) 提高提交时的规范
 
@@ -186,12 +186,12 @@ yarn add @nutui/nutui-taro
 ```
 
 安装 nutui 会遇到样式的报错 如图
-![](https://tva1.sinaimg.cn/large/008i3skNgy1gweug2xibjj32ay0oie81.jpg)
+![](https://tvax1.sinaimg.cn/large/008i3skNgy1gweug2xibjj32ay0oie81.jpg)
 
 解决办法：引入 @tarojs/plugin-html 插件 https://taro-docs.jd.com/taro/docs/use-h5
 
 全局引入后的依赖大小
-![](https://tva1.sinaimg.cn/large/008i3skNgy1gweum0nz0xj30r00ayq3a.jpg)
+![](https://tvax1.sinaimg.cn/large/008i3skNgy1gweum0nz0xj30r00ayq3a.jpg)
 
 为了按需引入，先安装插件 babel-plugin-import
 
@@ -210,10 +210,10 @@ import '@nutui/nutui-taro/dist/style.css'
 createApp(App).use(Button).use(Cell).use(Icon)
 ```
 
-![](https://tva1.sinaimg.cn/large/008i3skNgy1gweuu0eovyj31fu0ic403.jpg)
+![](https://tvax1.sinaimg.cn/large/008i3skNgy1gweuu0eovyj31fu0ic403.jpg)
 
 样式处理 因为 nutui 的设计稿是 375 的 所以将框架的设计尺寸调整为 375
-![](https://tva1.sinaimg.cn/large/008i3skNgy1gwevt1ay7kj317s0ksgnv.jpg)
+![](https://tvax1.sinaimg.cn/large/008i3skNgy1gwevt1ay7kj317s0ksgnv.jpg)
 
 到这里 nutui 组件库已经采坑完毕 能够正常使用 事件调用正常
 
@@ -245,11 +245,11 @@ export default {
 }
 ```
 
-![](https://tva1.sinaimg.cn/large/008i3skNgy1gwfoohwyzoj30sc0943yv.jpg)
+![](https://tvax1.sinaimg.cn/large/008i3skNgy1gwfoohwyzoj30sc0943yv.jpg)
 
 更多优化
 
-![](https://tva1.sinaimg.cn/large/008i3skNgy1gx0h5713vij31910u0agc.jpg)
+![](https://tvax1.sinaimg.cn/large/008i3skNgy1gx0h5713vij31910u0agc.jpg)
 
 ## ~~使用 script setup 语法在 Taro3 实现小程序[页面生命周期方法](https://taro-docs.jd.com/taro/docs/vue-page)~~ 替换使用 Taro 3.4.0 新特性
 
@@ -343,11 +343,11 @@ plugins: ['taro-plugin-pinia']
 
 ## taro3 配合 Vue DevTools 调试
 
-![](https://tva1.sinaimg.cn/large/008i3skNly1gwk89d5u70j31gi0u0jvs.jpg)
+![](https://tvax1.sinaimg.cn/large/008i3skNly1gwk89d5u70j31gi0u0jvs.jpg)
 
 > 开启 Vue DevTools 之后 预览主包体积会大于 2M 导致无法预览 视情况开启调试 正式构建不会开启 Vue DevTools 调试
 
-![](https://tva1.sinaimg.cn/large/008i3skNgy1gwp59kvqatj31d403wjs6.jpg)
+![](https://tvax1.sinaimg.cn/large/008i3skNgy1gwp59kvqatj31d403wjs6.jpg)
 
 默认不开启 devtools 调试 新增 script 开启
 
